@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+    background-color: #111;
+
+}
+
+#box1{
+    height: 100px;
+    width: 100px;
+    background-color: crimson;
+}
+
+#box2{
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+}
+#box3{
+    height: 100px;
+    width:100px;
+    background-color: royalblue;
+}
