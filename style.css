@@ -10,6 +10,42 @@ html,
 body{
     height: 100%;
     width: 100%;
-    background-color: #111;
 
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.container1,
+.container2,
+.container3{
+    height: 100%;
+    width: 100%;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.container1{
+background-color: aqua;
+}
+.container2{
+    background-color: rgb(15, 143, 143);
+}
+.container3{
+    background-color: rgb(4, 33, 33);
+}
+
+#box1,
+/* #box2, */
+#box3{
+width: 200px;
+height: 200px;
+background-color: brown;
+}
+
+.container2 h1{
+    font-size: 40vw;
+    text-transform: uppercase;
+   color: #111;
 }
