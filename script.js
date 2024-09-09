@@ -1,39 +1,39 @@
+let h1 = document.querySelector("#main h1")
 
-let menu = document.querySelector("#nav i")
-let close= document.querySelector("#full i")
-let main=document.querySelector("#main")
+function splitedTextFunc() {
+    let splitedText = h1.textContent.split("")
 
-var tl = gsap.timeline()
-
-tl.to("#full", {
-    right: 0,
-    duration: 0.3
-})
-tl.from("#full h4",{
-    opacity:0,
-    x:150,
-    duration:0.7,
-    // delay:0.3,
-    stagger:0.3
-})
-tl.from("#full i",{
-    opacity:0,
-})
-
-tl.pause()
-menu.addEventListener("click", () => {
-   tl.play()
-})
-
-close.addEventListener("click",()=>{
- tl.reverse()
-})
-
-main.addEventListener("mousemove",(dest)=>{
-    gsap.to("#cursor",{
-        x:dest.x,
-        y:dest.y,
-        ease: "back.out(1.7)",
-        duration:1,
+    let halfword= splitedText.length/2
+    let clutter = ""
+    splitedText.forEach((elem, id) => {
+        if (id < halfword) {
+            clutter += `<span class="a">${elem}</span>`
+        } else {
+            clutter += `<span class="b">${elem}</span>`
+        }
     })
+
+
+    h1.innerHTML = clutter
+
+}
+
+splitedTextFunc()
+
+gsap.from("#main h1 .a", {
+    y: 100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.15,
+    delay: 0.5
 })
+
+gsap.from("#main h1 .b", {
+    y: 100,
+    opacity: 0,
+    duration: 0.8,
+    stagger: -0.15,
+    delay: 0.5
+})
+
+
