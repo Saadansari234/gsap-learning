@@ -1,26 +1,39 @@
-let cursor= document.querySelector("#cursor")
-let main= document.querySelector("#main")
-let image= document.querySelector("#image")
-main.addEventListener("mousemove",(dent)=>{
-  gsap.to(cursor,{
-    x:dent.x,
-    y:dent.y,
-    ease: "back.out(1.7)",
-    duration:1,
-  })
 
+let menu = document.querySelector("#nav i")
+let close= document.querySelector("#full i")
+let main=document.querySelector("#main")
+
+var tl = gsap.timeline()
+
+tl.to("#full", {
+    right: 0,
+    duration: 0.3
+})
+tl.from("#full h4",{
+    opacity:0,
+    x:150,
+    duration:0.7,
+    // delay:0.3,
+    stagger:0.3
+})
+tl.from("#full i",{
+    opacity:0,
 })
 
-image.addEventListener("mouseenter",(dent)=>{
-    cursor.innerHTML=`<p>view more<p>`
-  gsap.to(cursor,{
-      scale:4,
+tl.pause()
+menu.addEventListener("click", () => {
+   tl.play()
+})
+
+close.addEventListener("click",()=>{
+ tl.reverse()
+})
+
+main.addEventListener("mousemove",(dest)=>{
+    gsap.to("#cursor",{
+        x:dest.x,
+        y:dest.y,
+        ease: "back.out(1.7)",
+        duration:1,
     })
 })
-
-image.addEventListener("mouseout",(dent)=>{
-     cursor.innerHTML=""
-    gsap.to(cursor,{
-        scale:1,
-      })
-  })

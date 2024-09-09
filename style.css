@@ -11,47 +11,70 @@ body{
     height: 100%;
     width: 100%;
     background-color: #111;
+    overflow-x: hidden;
 }
+
 #main{
-    height: 100%;
     width: 100%;
-    background-color: #111;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    background-image: url(https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+   background-position: center;
+   background-size: cover;
+   position: relative;
 }
+
 #cursor{
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background-color: white;
-   font-size: 5px;
-   text-align: center;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-  z-index: 9;
-  position: fixed;
+    width: 15px;
+    height: 15px;
+    background-image: linear-gradient(to right, red , yellow);
+    /* z-index: 10; */
+    /* background-color: aliceblue; */
+    border-radius: 50%;
+    position: fixed;
+    
+}
+
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    font-size: 2rem;
+}
+
+#nav i{
+    cursor: pointer;
 
 }
 
-#image{
-    width: 60vw;
-    height: 30vw;
-    background-color: red;
-    position: relative;
-}
-
-#image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#overlay{
-    width: 100%;
-    height: 100%;
+#full{
     position: absolute;
-    background-color: transparent;
-    z-index: 10;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    right:-40%;
+    background-color:rgba(250, 235, 215, 0.418);
+    padding: 100px 50px;
+    backdrop-filter:calc(20px);
+    /* position: relative; */
+}
+
+#full i{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    padding: 15px 15px;
+     background-color: white;
+     border-radius: 50%;
+     font-weight: 600;
+     font-size: 20px;
+     cursor: pointer;
+}
+
+#full h4{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    
 }
